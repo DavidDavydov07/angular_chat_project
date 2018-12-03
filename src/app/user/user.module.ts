@@ -8,7 +8,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { ToastModule } from 'ng2-toastr';
 
 
 @NgModule({
@@ -16,7 +15,6 @@ import { ToastModule } from 'ng2-toastr';
     CommonModule,
     FormsModule,
     BrowserAnimationsModule,
-    ToastModule.forRoot(),
     RouterModule.forChild([
       { path: 'sign-up', component: SignupComponent }
     ])

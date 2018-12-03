@@ -1,13 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-//import { AppRoutingModule } from './app-routing.module';
-import { RouterModule, Routes } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-import { ChatModule } from './chat/chat.module';
-import { UserModule } from './user/user.module';
-import { LoginComponent } from './user/login/login.component';
 
 @NgModule({
   declarations: [
@@ -15,16 +10,7 @@ import { LoginComponent } from './user/login/login.component';
   ],
   imports: [
     BrowserModule,
-    //AppRoutingModule,
-    ChatModule,
-    UserModule,
-
-    RouterModule.forRoot([
-      {path: 'login', component: LoginComponent, pathMatch:'full'},
-      {path: '', redirectTo:'login', pathMatch: 'full'},
-      {path: '*', component: LoginComponent},
-      {path: '**', component: LoginComponent}
-    ])
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

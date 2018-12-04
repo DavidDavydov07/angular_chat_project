@@ -1,3 +1,84 @@
-<p>
-  sign-up works!
-</p>
+<div class="container" *ngIf="isLoaded">
+  <h3 style="margin-top: 0.8rem;">Create a Account.</h3>
+  <div class="row" style="text-align:left">
+    <div class="col-md-12">
+      <form #createSignUpForm="ngForm" (ngSubmit)="signUpFunction()" style="margin-top: 0.8rem;">
+        <p>Feilds with a <b style="color: #e51c23">*</b> are required.</p>
+
+        
+        <!--First Name-->
+        <div class="form-group customPadding">
+          <b style="color: #e51c23">*</b><label>First Name</label>
+          <input type="text" name="firstName" [(ngModel)]="firstName" #first="ngModel" class="form-control" placeholder="John"
+            required>
+
+        </div>
+        <div [hidden]="first.valid || first.pristine" class="customInvalid">
+          Please enter a first name.
+        </div>
+
+        <!--Last Name-->
+        <div class="form-group customPadding">
+          <b style="color: #e51c23">*</b><label>Last Name</label>
+          <input type="text" name="lastName" [(ngModel)]="lastName" #last="ngModel" class="form-control" placeholder="Doe"
+            required>
+
+        </div>
+        <div [hidden]="last.valid || last.pristine" class="customInvalid">
+          Please enter a last name.
+        </div>
+
+        <!--Phone Number-->
+        <div class="form-group customPadding">
+          <b style="color: #e51c23">*</b><label>Mobile Phone Number</label>
+          <input type="number" name="mobile" [(ngModel)]="mobile" #phone="ngModel" class="form-control" placeholder="555-555-5555"
+            required>
+
+        </div>
+        <div [hidden]="phone.valid || phone.pristine" class="customInvalid">
+          Please enter a phone number.
+        </div>
+
+        <!--Email Address-->
+        <div class="form-group customPadding">
+          <b style="color: #e51c23">*</b><label>Email Address</label>
+          <input type="email" name="email" [(ngModel)]="email" #emailAddress="ngModel" class="form-control" placeholder="my.email@example.com"
+            required>
+
+        </div>
+        <div [hidden]="emailAddress.valid || emailAddress.pristine" class="customInvalid">
+          Please enter a email address.
+        </div>
+
+        <!--Password-->
+        <div class="form-group customPadding">
+          <b style="color: #e51c23">*</b><label>Password</label>
+          <input type="password" name="password" [(ngModel)]="password" #pass="ngModel" class="form-control" placeholder="Hunter2"
+            required>
+
+        </div>
+        <div [hidden]="pass.valid || pass.pristine" class="customInvalid">
+          Please enter a password.
+        </div>
+
+        <!--apiKey-->
+        <div class="form-group customPadding">
+          <b style="color: #e51c23">*</b><label>API Key</label>
+          <textarea type="text" name="apiKey" [(ngModel)]="apiKey" #key="ngModel" class="form-control" placeholder="ZTA0MjcwMDljNTAxMjllYWVhZjM4ZWIyOWU3NDBmNThhOGMzZmIwZThlN2ZjNjE0ZTUwYTUzOTUzNzk4ZTZjMDc3MjIyZjlmOTE5OTgwYTZhMmRjNTFiNDMzY2FlNDlkOGZmYmQ4N2RiODMyOThiOWIyNTkwMTE2MjNiYTZkOGVhYg=="
+            required></textarea>
+
+        </div>
+        <div [hidden]="key.valid || key.pristine" class="customInvalid">
+          Please enter a API key.
+        </div>
+
+        <button type="submit" class="btn btn-primary customPadding" [disabled]="!createSignUpForm.form.valid">
+          Sign up!
+        </button>
+      </form>
+
+    </div>
+
+  </div>
+
+</div>

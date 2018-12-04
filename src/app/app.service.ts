@@ -4,7 +4,8 @@ import { Cookie } from 'ng2-cookies/ng2-cookies';
 
 //catchError = .catch, tap = do, toPromise exists in observables as a method.
 import { catchError, tap } from 'rxjs/operators';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule , HttpClient, HttpHeaders } from '@angular/common/http';
 import { HttpErrorResponse, HttpParams } from '@angular/common/http';
 
 @Injectable({

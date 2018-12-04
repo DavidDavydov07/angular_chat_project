@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
@@ -25,6 +27,8 @@ import { LoginComponent } from './user/login/login.component';
     FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    HttpModule,
+    HttpClientModule,
 
     ChatModule,
     UserModule,
